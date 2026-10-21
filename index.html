@@ -2,330 +2,532 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Caleb Turner | Business Intelligence Portfolio</title>
+  <meta name="description" content=" Caleb Turner's Business Intelligence portfolio featuring enterprise data management, dimensional modeling, analytics, and Power BI coursework.">
 
-    <meta name="description"
-          content="Caleb Turner's Business Intelligence and Data Analytics portfolio, featuring enterprise data management, dimensional modeling, and analytics projects.">
+  <title>Caleb Turner | Business Intelligence Portfolio</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+  <style>
+    : root {
+      --navy: #142b4a;
+      --navy-light: #203f65;
+      --accent: #2878c8;
+      --background: #f4f6f9;
+      --surface: #ffffff;
+      --text: #263445;
+      --muted: #5e6b7a;
+      --border: #dce3eb;
+      --radius: 12px;
+      --shadow: 0 5px 18px rgba(20, 43, 74, 0.07);
+    }
 
-        html {
-            scroll-behavior: smooth;
-        }
+    * {
+      box-sizing: border-box;
+    }
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f5f7fa;
-            color: #222;
-            line-height: 1.6;
-        }
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
 
-        header {
-            background: #1f2937;
-            color: white;
-            padding: 70px 20px;
-            text-align: center;
-        }
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+    }
 
-        header h1 {
-            margin: 0;
-            font-size: clamp(32px, 5vw, 46px);
-        }
+    a {
+      color: var(--accent);
+    }
 
-        header p {
-            font-size: 18px;
-            margin: 10px 0 0;
-        }
+    a:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 4px;
+    }
 
-        .subtitle {
-            color: #d1d5db;
-        }
+    .container {
+      width: min(100% - 40px, 1000px);
+      margin: 0 auto;
+    }
 
-        nav {
-            background: white;
-            padding: 16px;
-            text-align: center;
-            border-bottom: 1px solid #ddd;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-        }
+    .site-header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+    }
 
-        nav a {
-            display: inline-block;
-            margin: 4px 12px;
-            text-decoration: none;
-            color: #2563eb;
-            font-weight: bold;
-        }
+    .nav {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
 
-        nav a:hover,
-        .project a:hover {
-            text-decoration: underline;
-        }
+    .brand {
+      color: var(--navy);
+      font-size: 1.1rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
 
-        section {
-            max-width: 1000px;
-            margin: auto;
-            padding: 45px 20px;
-            scroll-margin-top: 75px;
-        }
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
 
-        h2 {
-            font-size: 30px;
-            margin: 0 0 20px;
-        }
+    .nav-links a {
+      color: var(--text);
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+    }
 
-        .skills {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
+    .nav-links a:hover {
+      color: var(--accent);
+    }
 
-        .skill {
-            background: white;
-            padding: 10px 15px;
-            border-radius: 6px;
-            border: 1px solid #ddd;
-        }
+    .hero {
+      padding: 76px 0 68px;
+      background: var(--navy);
+      color: #ffffff;
+    }
 
-        .project {
-            background: white;
-            padding: 25px;
-            margin-bottom: 20px;
-            border-radius: 8px;
-            border: 1px solid #ddd;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
-        }
+    .hero h1 {
+      margin: 0 0 10px;
+      font-size: clamp(2.2rem, 6vw, 3.5rem);
+      line-height: 1.15;
+      letter-spacing: -1px;
+    }
 
-        .featured {
-            border-top: 4px solid #2563eb;
-        }
+    .hero .subtitle {
+      margin: 0 0 20px;
+      color: #d9e7f7;
+      font-size: clamp(1.1rem, 3vw, 1.35rem);
+    }
 
-        .project h3 {
-            margin-top: 0;
-            font-size: 22px;
-        }
+    .hero .intro {
+      max-width: 700px;
+      margin: 0 0 28px;
+      color: #f1f5fa;
+    }
 
-        .project a,
-        .contact-link {
-            color: #2563eb;
-            font-weight: bold;
-        }
+    .button {
+      display: inline-block;
+      padding: 11px 18px;
+      border: 1px solid #ffffff;
+      border-radius: 8px;
+      background: #ffffff;
+      color: var(--navy);
+      font-weight: 700;
+      text-decoration: none;
+      transition: transform 0.15s ease;
+    }
 
-        .project-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px 20px;
-            margin-top: 18px;
-        }
+    .button: hover {
+      transform: translateY(-2px);
+    }
 
-        .status {
-            color: #4b5563;
-            font-size: 14px;
-        }
+    main section {
+      padding: 48px 0;
+    }
 
-        footer {
-            background: #1f2937;
-            color: white;
-            text-align: center;
-            padding: 25px;
-        }
+    .section-heading {
+      margin: 0 0 10px;
+      color: var(--navy);
+      font-size: clamp(1.7rem, 4vw, 2rem);
+      line-height: 1.3;
+    }
 
-        @media (max-width: 600px) {
-            header {
-                padding: 48px 18px;
-            }
+    .section-intro {
+      max-width: 760px;
+      margin: 0 0 26px;
+      color: var(--muted);
+    }
 
-            section {
-                padding: 32px 18px;
-            }
+    .card {
+      min-width: 0;
+      padding: 25px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
 
-            .project {
-                padding: 20px;
-            }
-        }
-    </style>
+    .card h3 {
+      margin: 0 0 10px;
+      color: var(--navy);
+      font-size: 1.2rem;
+      line-height: 1.4;
+    }
+
+    .card p {
+      margin: 0 0 14px;
+    }
+
+    .card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .skills-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .skill {
+      display: inline-block;
+      padding: 8px 13px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--surface);
+      color: var(--text);
+      font-size: 0.95rem;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .project-featured {
+      grid-column: 1 / -1;
+      border-top: 4px solid var(--accent);
+    }
+
+    .status {
+      display: inline-block;
+      margin: 2px 0 15px;
+      padding: 4px 9px;
+      border-radius: 6px;
+      background: #edf3fa;
+      color: var(--navy);
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .project-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 20px;
+      margin-top: 16px;
+    }
+
+    .project-links a {
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .project-links a:hover {
+      text-decoration: underline;
+    }
+
+    .contact-card {
+      background: var(--surface);
+    }
+
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px 24px;
+      margin-top: 18px;
+    }
+
+    .contact-links a {
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .contact-links a:hover {
+      text-decoration: underline;
+    }
+
+    .site-footer {
+      padding: 24px 0;
+      border-top: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--muted);
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    .site-footer p {
+      margin: 0;
+    }
+
+    @media (max-width: 650px) {
+      .container {
+        width: min(100% - 28px, 1000px);
+      }
+
+      .nav {
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        gap: 12px 16px;
+      }
+
+      .hero {
+        padding: 55px 0;
+      }
+
+      main section {
+        padding: 36px 0;
+      }
+
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-featured {
+        grid-column: auto;
+      }
+
+      .card {
+        padding: 20px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition: none !important;
+      }
+    }
+  </style>
 </head>
 
 <body>
+  <header class="site-header">
+    <nav class="nav container" aria-label="Main navigation">
+      <a class="brand" href="#home">Caleb Turner</a>
 
-<header>
-    <h1>Caleb Turner</h1>
-    <p>Business Intelligence &amp; Data Analytics</p>
-    <p class="subtitle">
-        Power BI | SQL | Data Modeling | Business Analytics
-    </p>
-</header>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
 
-<nav aria-label="Main navigation">
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-</nav>
+  <section class="hero" id="home">
+    <div class="container">
+      <h1>Caleb Turner</h1>
+      <p class="subtitle">Business Intelligence &amp; Analytics</p>
 
-<main>
+      <p class="intro">
+        I combine a background in manufacturing operations and software
+        quality assurance with graduate-level studies in business
+        intelligence. My focus is turning business data into useful
+        reporting, stronger processes, and informed decisions.
+      </p>
 
+      <a class="button" href="#projects">Explore My Projects</a>
+    </div>
+  </section>
+
+  <main>
     <section id="about">
-        <h2>About Me</h2>
+      <div class="container">
+        <h2 class="section-heading">About Me</h2>
 
-        <p>
-            I bring a background in manufacturing operations, production
-            quality, employee training, and game quality assurance to my
-            developing career in Business Intelligence and Data Analytics.
-            I am pursuing a Master's degree in Business Intelligence
-            &amp; Analytics.
-        </p>
+        <div class="card">
+          <p>
+            I hold a bachelor's degree in Game Design from Full Sail
+            University and am pursuing a master's degree in Business
+            Intelligence and Analytics.
+          </p>
 
-        <p>
-            My interests include Power BI, SQL, dimensional modeling,
-            enterprise data management, and using data to help organizations
-            understand performance, improve processes, and make informed
-            business decisions.
-        </p>
+          <p>
+            My professional background includes manufacturing operations,
+            production training, equipment troubleshooting, process
+            improvement, and game quality assurance. These experiences
+            have strengthened my attention to detail, analytical thinking,
+            documentation, and problem-solving skills.
+          </p>
+
+          <p>
+            I am building on that experience through business intelligence
+            coursework involving enterprise data management, dimensional
+            modeling, data visualization, and analytics. My goal is to
+            apply these skills to practical business problems and
+            data-informed decision-making.
+          </p>
+        </div>
+      </div>
     </section>
 
     <section id="skills">
-        <h2>Skills &amp; Areas of Study</h2>
+      <div class="container">
+        <h2 class="section-heading">Skills &amp; Technologies</h2>
 
-        <div class="skills">
-            <div class="skill">Power BI</div>
-            <div class="skill">SQL</div>
-            <div class="skill">Data Modeling</div>
-            <div class="skill">Business Intelligence</div>
-            <div class="skill">Data Analytics</div>
-            <div class="skill">Microsoft Excel</div>
-            <div class="skill">Enterprise Data Management</div>
-            <div class="skill">DAX</div>
-            <div class="skill">Data Governance</div>
-            <div class="skill">AI &amp; Analytics</div>
-            <div class="skill">Quality Assurance</div>
-            <div class="skill">Process Improvement</div>
+        <p class="section-intro">
+          Tools and concepts developed through coursework and professional
+          experience.
+        </p>
+
+        <div class="skills-grid">
+          <span class="skill">Power BI</span>
+          <span class="skill">Power BI Service</span>
+          <span class="skill">SQL Fundamentals</span>
+          <span class="skill">Data Modeling</span>
+          <span class="skill">Dimensional Modeling</span>
+          <span class="skill">Business Intelligence</span>
+          <span class="skill">Data Analytics</span>
+          <span class="skill">Enterprise Data Management</span>
+          <span class="skill">ETL Concepts</span>
+          <span class="skill">DAX Fundamentals</span>
+          <span class="skill">Microsoft Excel</span>
+          <span class="skill">Data Quality</span>
+          <span class="skill">Jira</span>
+          <span class="skill">Confluence</span>
+          <span class="skill">TestRail</span>
+          <span class="skill">Process Improvement</span>
+          <span class="skill">Quality Assurance</span>
+          <span class="skill">Manufacturing Operations</span>
         </div>
+      </div>
     </section>
 
     <section id="projects">
-        <h2>Projects</h2>
+      <div class="container">
+        <h2 class="section-heading">Projects</h2>
 
-        <div class="project featured">
+        <p class="section-intro">
+          Selected academic work and developing portfolio projects
+          demonstrating my approach to data, reporting, and business
+          problem-solving.
+        </p>
+
+        <div class="projects-grid">
+          <article class="card project-featured">
             <h3>Apple Fitness+ Enterprise Data Management</h3>
 
             <p>
-                An academic enterprise data management proposal exploring
-                how workout engagement data could support business
-                intelligence and informed subscriber-retention decisions.
+              An enterprise data management proposal focused on improving
+              fitness-session reporting through data integration,
+              dimensional modeling, ETL processes, data quality controls,
+              and privacy-aware analytics.
             </p>
-
-            <p><strong>Project Highlights</strong></p>
-            <ul>
-                <li>Dimensional modeling and star schema design</li>
-                <li>Proposed data ingestion, storage, and warehouse architecture</li>
-                <li>ETL planning and data quality controls</li>
-                <li>Data governance and subscriber privacy considerations</li>
-                <li>Implementation planning, costs, risks, and ROI</li>
-            </ul>
 
             <p>
-                <strong>Technologies considered:</strong>
-                Airbyte, Azure Data Lake Storage, Microsoft Fabric,
-                and Power BI.
+              The project addresses requirements gathering, session-level
+              data grain, controlled data mappings, migration validation,
+              and acceptance criteria for a reliable reporting solution.
             </p>
 
-            <p class="status">
-                Academic project — proposed architecture, not a deployed system.
-            </p>
+            <span class="status">Coursework Completed</span>
 
             <div class="project-links">
-                <a href="projects/apple-fitness-edm/TurnerCaleb_4.3_Apple_Fitness_EDM_Final_Project_Report.pdf"
-                   target="_blank" rel="noopener noreferrer">
-                    View Final Project Report (PDF)
-                </a>
+              <a
+                href="projects/apple-fitness-edm/TurnerCaleb_4.3_Apple_Fitness_EDM_Final_Project_Report.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >View Project Report (PDF)</a>
 
-                <a href="projects/apple-fitness-edm/TurnerCaleb_4.3_Apple_Fitness_EDM_Final_Project.pdf"
-                   target="_blank" rel="noopener noreferrer">
-                    View Final Project (PDF)
-                </a>
+              <a
+                href="projects/apple-fitness-edm/TurnerCaleb_4.3_Apple_Fitness_EDM_Final_Project.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+              >View Final Project (PDF)</a>
             </div>
-        </div>
+          </article>
 
-        <div class="project">
+          <article class="card">
             <h3>Dimensional Modeling</h3>
 
             <p>
-                Demonstrates dimensional modeling concepts, including
-                business grain, fact tables, dimension tables, keys,
-                relationships, and star schema design.
+              An academic project exploring dimensional modeling,
+              including business processes, fact tables, dimension tables,
+              declared grain, and analytical reporting requirements.
             </p>
 
-            <p>
-                <strong>Focus:</strong>
-                Organizing business data to support consistent reporting
-                and analytical queries.
-            </p>
+            <span class="status">Coursework Completed</span>
+          </article>
 
-            <p class="status">
-                Coursework project related to the Apple Fitness+ case study.
-            </p>
-        </div>
-
-        <div class="project">
+          <article class="card">
             <h3>Power BI Dashboard</h3>
 
             <p>
-                A planned analytics project focused on visualizing key
-                performance indicators, exploring trends, and presenting
-                actionable business insights.
+              A developing portfolio project intended to demonstrate
+              interactive data visualization, KPI reporting, and
+              business-focused insights using Power BI.
             </p>
 
-            <p class="status">Status: Planned</p>
-        </div>
+            <span class="status">Planned Project</span>
+          </article>
 
-        <div class="project">
+          <article class="card">
             <h3>SQL Data Analysis</h3>
 
             <p>
-                A planned project applying SQL to retrieve, summarize,
-                and analyze structured data to answer business questions.
+              A planned project to demonstrate querying, filtering,
+              aggregating, and analyzing structured data to answer
+              practical business questions.
             </p>
 
-            <p class="status">Status: Planned</p>
+            <span class="status">Planned Project</span>
+          </article>
         </div>
+      </div>
     </section>
 
     <section id="contact">
-        <h2>Contact</h2>
+      <div class="container">
+        <h2 class="section-heading">Contact</h2>
 
-        <p>
-            Connect with me professionally on
-            <a class="contact-link"
-               href="https://www.linkedin.com/"
-               target="_blank"
-               rel="noopener noreferrer">LinkedIn</a>.
-            Replace this general link with your personal LinkedIn profile URL.
-        </p>
+        <div class="card contact-card">
+          <p>
+            I welcome opportunities to connect with professionals in
+            business intelligence, analytics, and data-driven operations.
+          </p>
 
-        <p>
-            Explore my code and projects on
-            <a class="contact-link"
-               href="https://github.com/CalebTurnerBI"
-               target="_blank"
-               rel="noopener noreferrer">GitHub</a>.
-        </p>
+          <div class="contact-links">
+            <a
+              href="https://github.com/CalebTurnerBI"
+              target="_blank"
+              rel="noopener noreferrer"
+            >GitHub Profile</a>
+
+            <a
+              href="https://www.linkedin.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >LinkedIn</a>
+          </div>
+        </div>
+      </div>
     </section>
+  </main>
 
-</main>
+  <footer class="site-footer">
+    <div class="container">
+      <p>
+        &copy; <span id="copyright-year">2026</span> Caleb Turner.
+        Business Intelligence &amp; Analytics Portfolio.
+      </p>
+    </div>
+  </footer>
 
-<footer>
-    <p>&copy; 2026 Caleb Turner | Business Intelligence Portfolio</p>
-</footer>
-
+  <script>
+    document.getElementById("copyright-year").textContent =
+      new Date().getFullYear();
+  </script>
 </body>
 </html>
