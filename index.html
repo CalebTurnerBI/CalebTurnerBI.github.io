@@ -1,11 +1,24 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caleb Turner | Business Intelligence & Data Analytics</title>
+
+    <title>Caleb Turner | Business Intelligence Portfolio</title>
+
+    <meta name="description"
+          content="Caleb Turner's Business Intelligence and Data Analytics portfolio, featuring enterprise data management, dimensional modeling, and analytics projects.">
 
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             margin: 0;
             font-family: Arial, sans-serif;
@@ -23,37 +36,51 @@
 
         header h1 {
             margin: 0;
-            font-size: 42px;
+            font-size: clamp(32px, 5vw, 46px);
         }
 
         header p {
-            font-size: 20px;
-            margin-top: 10px;
+            font-size: 18px;
+            margin: 10px 0 0;
+        }
+
+        .subtitle {
+            color: #d1d5db;
         }
 
         nav {
             background: white;
-            padding: 15px;
+            padding: 16px;
             text-align: center;
             border-bottom: 1px solid #ddd;
+            position: sticky;
+            top: 0;
+            z-index: 10;
         }
 
         nav a {
-            margin: 0 15px;
+            display: inline-block;
+            margin: 4px 12px;
             text-decoration: none;
             color: #2563eb;
             font-weight: bold;
         }
 
+        nav a:hover,
+        .project a:hover {
+            text-decoration: underline;
+        }
+
         section {
             max-width: 1000px;
             margin: auto;
-            padding: 50px 20px;
+            padding: 45px 20px;
+            scroll-margin-top: 75px;
         }
 
         h2 {
             font-size: 30px;
-            margin-bottom: 20px;
+            margin: 0 0 20px;
         }
 
         .skills {
@@ -75,10 +102,34 @@
             margin-bottom: 20px;
             border-radius: 8px;
             border: 1px solid #ddd;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+        }
+
+        .featured {
+            border-top: 4px solid #2563eb;
         }
 
         .project h3 {
             margin-top: 0;
+            font-size: 22px;
+        }
+
+        .project a,
+        .contact-link {
+            color: #2563eb;
+            font-weight: bold;
+        }
+
+        .project-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 20px;
+            margin-top: 18px;
+        }
+
+        .status {
+            color: #4b5563;
+            font-size: 14px;
         }
 
         footer {
@@ -87,6 +138,20 @@
             text-align: center;
             padding: 25px;
         }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 48px 18px;
+            }
+
+            section {
+                padding: 32px 18px;
+            }
+
+            .project {
+                padding: 20px;
+            }
+        }
     </style>
 </head>
 
@@ -94,114 +159,171 @@
 
 <header>
     <h1>Caleb Turner</h1>
-    <p>Business Intelligence & Data Analytics</p>
-    <p>Power BI | SQL | Data Modeling | Analytics</p>
+    <p>Business Intelligence &amp; Data Analytics</p>
+    <p class="subtitle">
+        Power BI | SQL | Data Modeling | Business Analytics
+    </p>
 </header>
 
-<nav>
+<nav aria-label="Main navigation">
     <a href="#about">About</a>
     <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
     <a href="#contact">Contact</a>
 </nav>
 
-<section id="about">
-    <h2>About Me</h2>
+<main>
 
-    <p>
-        Business Intelligence and Data Analytics professional with a background
-        in manufacturing, operations, quality assurance, training, and game QA.
-        Currently pursuing a Master's degree in Business Intelligence &
-        Analytics.
-    </p>
+    <section id="about">
+        <h2>About Me</h2>
 
-    <p>
-        I am developing skills in Power BI, SQL, dimensional modeling,
-        enterprise data management, analytics, and AI, with a focus on turning
-        business data into useful insights.
-    </p>
-</section>
-
-<section id="skills">
-    <h2>Skills</h2>
-
-    <div class="skills">
-        <div class="skill">Power BI</div>
-        <div class="skill">SQL</div>
-        <div class="skill">Data Modeling</div>
-        <div class="skill">Business Intelligence</div>
-        <div class="skill">Data Analytics</div>
-        <div class="skill">Excel</div>
-        <div class="skill">Enterprise Data Management</div>
-        <div class="skill">DAX</div>
-        <div class="skill">AI & Analytics</div>
-    </div>
-</section>
-
-<section id="projects">
-    <h2>Projects</h2>
-
-    <div class="project">
-       <p><strong>Status:</strong> Coursework Completed</p>
-    </div>
-
-    <div class="project">
-        <h3>Power BI Dashboard</h3>
         <p>
-            Business intelligence dashboard demonstrating data
-            visualization, analysis, and business insights.
+            I bring a background in manufacturing operations, production
+            quality, employee training, and game quality assurance to my
+            developing career in Business Intelligence and Data Analytics.
+            I am pursuing a Master's degree in Business Intelligence
+            &amp; Analytics.
         </p>
-        <p><strong>Status:</strong> Coming Soon</p>
-    </div>
 
-    <div class="project">
-        <h3>SQL Data Analysis</h3>
         <p>
-            SQL-based analysis focused on answering business
-            questions using structured data.
+            My interests include Power BI, SQL, dimensional modeling,
+            enterprise data management, and using data to help organizations
+            understand performance, improve processes, and make informed
+            business decisions.
         </p>
-        <p><strong>Status:</strong> Coming Soon</p>
-    </div>
-</section>
+    </section>
 
-    <div class="project">
-        <h3>Power BI Dashboard</h3>
+    <section id="skills">
+        <h2>Skills &amp; Areas of Study</h2>
+
+        <div class="skills">
+            <div class="skill">Power BI</div>
+            <div class="skill">SQL</div>
+            <div class="skill">Data Modeling</div>
+            <div class="skill">Business Intelligence</div>
+            <div class="skill">Data Analytics</div>
+            <div class="skill">Microsoft Excel</div>
+            <div class="skill">Enterprise Data Management</div>
+            <div class="skill">DAX</div>
+            <div class="skill">Data Governance</div>
+            <div class="skill">AI &amp; Analytics</div>
+            <div class="skill">Quality Assurance</div>
+            <div class="skill">Process Improvement</div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+
+        <div class="project featured">
+            <h3>Apple Fitness+ Enterprise Data Management</h3>
+
+            <p>
+                An academic capstone-style proposal exploring how enterprise
+                data management and business intelligence could help
+                decision-makers analyze workout engagement and investigate
+                subscriber retention.
+            </p>
+
+            <p><strong>Project Highlights</strong></p>
+            <ul>
+                <li>Dimensional modeling and star schema design</li>
+                <li>Proposed data ingestion, storage, and warehouse architecture</li>
+                <li>ETL planning and data quality controls</li>
+                <li>Data governance and subscriber privacy considerations</li>
+                <li>Implementation planning, costs, risks, and ROI</li>
+            </ul>
+
+            <p>
+                <strong>Technologies considered:</strong>
+                Airbyte, Azure Data Lake Storage, Microsoft Fabric,
+                and Power BI.
+            </p>
+
+            <p class="status">
+                Academic project — proposed architecture, not a deployed system.
+            </p>
+
+            <div class="project-links">
+                <a href="projects/apple-fitness-edm/Apple-Fitness-EDM-White-Paper.pdf">
+                    White Paper (PDF)
+                </a>
+
+                <a href="projects/apple-fitness-edm/Apple-Fitness-EDM-Presentation.pdf">
+                    Final Presentation (PDF)
+                </a>
+            </div>
+        </div>
+
+        <div class="project">
+            <h3>Dimensional Modeling</h3>
+
+            <p>
+                Demonstrates dimensional modeling concepts, including
+                business grain, fact tables, dimension tables, keys,
+                relationships, and star schema design.
+            </p>
+
+            <p>
+                <strong>Focus:</strong>
+                Organizing business data to support consistent reporting
+                and analytical queries.
+            </p>
+
+            <p class="status">
+                Coursework project related to the Apple Fitness+ case study.
+            </p>
+        </div>
+
+        <div class="project">
+            <h3>Power BI Dashboard</h3>
+
+            <p>
+                A planned analytics project focused on visualizing key
+                performance indicators, exploring trends, and presenting
+                actionable business insights.
+            </p>
+
+            <p class="status">Status: Planned</p>
+        </div>
+
+        <div class="project">
+            <h3>SQL Data Analysis</h3>
+
+            <p>
+                A planned project applying SQL to retrieve, summarize,
+                and analyze structured data to answer business questions.
+            </p>
+
+            <p class="status">Status: Planned</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+
         <p>
-            Business intelligence dashboard demonstrating data visualization,
-            analysis, and business insights.
+            Connect with me professionally on
+            <a class="contact-link"
+               href="https://www.linkedin.com/"
+               target="_blank"
+               rel="noopener noreferrer">LinkedIn</a>.
+            Replace this general link with your personal LinkedIn profile URL.
         </p>
-        <p><strong>Status:</strong> Coming Soon</p>
-    </div>
 
-    <div class="project">
-        <h3>SQL Data Analysis</h3>
         <p>
-            SQL-based analysis focused on answering business questions using
-            structured data.
+            Explore my code and projects on
+            <a class="contact-link"
+               href="https://github.com/CalebTurnerBI"
+               target="_blank"
+               rel="noopener noreferrer">GitHub</a>.
         </p>
-        <p><strong>Status:</strong> Coming Soon</p>
-    </div>
+    </section>
 
-</section>
-
-<section id="contact">
-    <h2>Contact</h2>
-
-    <p>
-        <a href="https://www.linkedin.com/" target="_blank">
-            LinkedIn
-        </a>
-    </p>
-
-    <p>
-        <a href="https://github.com/CalebTurnerBI" target="_blank">
-            GitHub
-        </a>
-    </p>
-</section>
+</main>
 
 <footer>
-    <p>© 2026 Caleb Turner</p>
+    <p>&copy; 2026 Caleb Turner | Business Intelligence Portfolio</p>
 </footer>
 
 </body>
