@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A proposed manufacturing business intelligence solution using Microsoft Fabric and Power BI, developed as a graduate business case project by Caleb Turner.">
+  <title>Manufacturing Performance &amp; Operational Intelligence | Caleb Turner</title>
+  <style>
+    :root { --navy:#142b4a; --accent:#2878c8; --background:#f4f6f9; --surface:#fff; --text:#263445; --muted:#5e6b7a; --border:#dce3eb; --radius:12px; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--background); color:var(--text); font:16px/1.7 Arial,Helvetica,sans-serif; }
+    a { color:var(--accent); }
+    .container { width:min(100% - 36px,900px); margin:0 auto; }
+    header { background:var(--surface); border-bottom:1px solid var(--border); padding:16px 0; }
+    header a { color:var(--navy); font-weight:700; text-decoration:none; }
+    .hero { background:var(--navy); color:white; padding:58px 0; }
+    .eyebrow { color:#c9ddf2; font-size:.9rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; }
+    h1 { font-size:clamp(2rem,5vw,3rem); line-height:1.15; margin:10px 0 14px; }
+    .hero p { max-width:760px; color:#edf4fb; margin:0; }
+    main section { padding:32px 0 8px; }
+    h2 { color:var(--navy); font-size:1.55rem; margin:0 0 12px; }
+    h3 { color:var(--navy); margin:0 0 8px; font-size:1.08rem; }
+    .card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:22px; }
+    .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+    .metric { font-size:1.7rem; font-weight:700; color:var(--navy); line-height:1.2; }
+    .muted { color:var(--muted); }
+    .tag { display:inline-block; padding:5px 10px; border-radius:6px; background:#edf3fa; color:var(--navy); font-size:.86rem; font-weight:700; margin:4px 5px 4px 0; }
+    .flow { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:10px; align-items:stretch; }
+    .flow div { border:1px solid var(--border); background:#fff; border-radius:9px; padding:14px; text-align:center; font-weight:700; color:var(--navy); }
+    ul { padding-left:22px; }
+    .note { border-left:4px solid var(--accent); background:#edf3fa; padding:14px 17px; border-radius:0 8px 8px 0; }
+    footer { margin-top:42px; padding:22px 0; border-top:1px solid var(--border); color:var(--muted); background:#fff; }
+    @media(max-width:650px) { .grid { grid-template-columns:1fr; } .flow { grid-template-columns:1fr 1fr; } .hero { padding:42px 0; } }
+  </style>
+</head>
+<body>
+  <header><div class="container"><a href="index.html">← Back to Caleb Turner's BI Portfolio</a></div></header>
+  <section class="hero">
+    <div class="container">
+      <div class="eyebrow">Graduate Business Intelligence Project · Business Case</div>
+      <h1>Manufacturing Performance and Operational Intelligence</h1>
+      <p>A proposed BI initiative to consolidate manufacturing performance information and give operations leaders a more consistent view of production, downtime, quality, and improvement opportunities.</p>
+    </div>
+  </section>
+  <main class="container">
+    <section>
+      <h2>Project Overview</h2>
+      <div class="card">
+        <p>This project develops a business case for a manufacturing operations intelligence initiative at TreeHouse Foods. The proposal addresses a common operational challenge: production, quality, maintenance, and enterprise data can be spread across separate systems, making it harder to create a consistent view of performance.</p>
+        <p>The proposed solution uses Microsoft Fabric and Power BI to establish a scalable data foundation and support reliable KPI reporting. The work is an academic proposal and planning exercise; it does not represent a system deployed at TreeHouse Foods or verified operational results.</p>
+      </div>
+    </section>
+    <section>
+      <h2>Business Problem &amp; Objectives</h2>
+      <div class="card">
+        <p>The business case focuses on improving visibility across operational performance by bringing relevant data together, standardizing KPI definitions, and making information easier to analyze.</p>
+        <ul>
+          <li>Reduce fragmented reporting across production, quality, maintenance, and related operational sources.</li>
+          <li>Establish consistent definitions for manufacturing performance measures.</li>
+          <li>Give decision-makers a clearer view of output, downtime, quality, and operational trends.</li>
+          <li>Create a foundation that can expand as data quality, integration, and user adoption mature.</li>
+        </ul>
+      </div>
+    </section>
+    <section>
+      <h2>Proposed Technology Architecture</h2>
+      <div class="card">
+        <div class="flow" aria-label="Proposed data architecture">
+          <div>Operational Sources<br><span class="muted">Production · Quality · ERP · Maintenance</span></div>
+          <div>Data Integration<br><span class="muted">Fabric Data Factory / Dataflow Gen2</span></div>
+          <div>Storage &amp; Modeling<br><span class="muted">OneLake · Fabric Warehouse</span></div>
+          <div>Analytics &amp; Reporting<br><span class="muted">Power BI</span></div>
+        </div>
+        <p class="muted">Conceptual architecture: operational data is integrated and transformed, stored in an analytical environment, and presented through governed reporting. Specific source connectivity and implementation details would be validated during project discovery.</p>
+      </div>
+    </section>
+    <section>
+      <h2>Proposed KPI Focus</h2>
+      <div class="grid">
+        <div class="card"><h3>Production Performance</h3><p>Production output and Overall Equipment Effectiveness (OEE).</p></div>
+        <div class="card"><h3>Equipment Reliability</h3><p>Downtime patterns and equipment-related production interruptions.</p></div>
+        <div class="card"><h3>Quality</h3><p>Defect rate and quality performance trends.</p></div>
+        <div class="card"><h3>Operational Efficiency</h3><p>Changeover duration and labor efficiency as the solution matures.</p></div>
+      </div>
+    </section>
+    <section>
+      <h2>Implementation Approach</h2>
+      <div class="card">
+        <p>The proposal recommends an initial six-month pilot with a controlled scope, followed by evaluation and phased expansion.</p>
+        <ul>
+          <li><strong>Foundation:</strong> confirm business requirements, source-system availability, KPI definitions, data ownership, and data quality needs.</li>
+          <li><strong>Integration and reporting:</strong> build the initial data pipelines and analytical model, then develop and validate priority Power BI reporting.</li>
+          <li><strong>Evaluation and expansion:</strong> assess data reliability, user adoption, and business value before expanding coverage and adding further measures.</li>
+        </ul>
+      </div>
+    </section>
+    <section>
+      <h2>Illustrative Financial Business Case</h2>
+      <div class="grid">
+        <div class="card"><div class="metric">$435,000</div><div class="muted">Modeled three-year benefits</div></div>
+        <div class="card"><div class="metric">$203,000</div><div class="muted">Modeled three-year costs</div></div>
+        <div class="card"><div class="metric">114%</div><div class="muted">Illustrative three-year ROI</div></div>
+        <div class="card"><div class="metric">6 months</div><div class="muted">Proposed initial pilot period</div></div>
+      </div>
+      <p class="note"><strong>Important:</strong> Financial figures are planning assumptions developed for the academic business case, not actual TreeHouse Foods savings, approved funding, or realized returns. The ROI estimate is calculated from the modeled benefits and costs and would require validation against operational data.</p>
+    </section>
+    <section>
+      <h2>Skills Demonstrated</h2>
+      <div class="card">
+        <span class="tag">Business Intelligence Strategy</span>
+        <span class="tag">Microsoft Fabric</span>
+        <span class="tag">Power BI</span>
+        <span class="tag">ETL / Data Integration</span>
+        <span class="tag">Data Warehousing</span>
+        <span class="tag">KPI Development</span>
+        <span class="tag">ROI Analysis</span>
+        <span class="tag">Risk Assessment</span>
+        <span class="tag">Implementation Roadmapping</span>
+        <span class="tag">Manufacturing Analytics</span>
+      </div>
+    </section>
+    <section>
+      <h2>Project Takeaway</h2>
+      <div class="card">
+        <p>This project connects manufacturing operations experience with business intelligence planning. It demonstrates how operational problems can be translated into data requirements, a proposed architecture, measurable performance indicators, an implementation plan, and a financial justification.</p>
+      </div>
+    </section>
+  </main>
+  <footer><div class="container">Caleb Turner · Business Intelligence &amp; Analytics Portfolio · <a href="index.html">Return to portfolio</a></div></footer>
+</body>
+</html>
