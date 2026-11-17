@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Online version of Caleb Turner's BIT550 manufacturing operations intelligence business case analysis.">
+<title>Manufacturing Operations Intelligence — Business Case | Caleb Turner</title>
+<style>
+:root{--navy:#142b4a;--blue:#2878c8;--bg:#f4f6f9;--ink:#263445;--muted:#5e6b7a;--line:#dce3eb}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 Arial,Helvetica,sans-serif}
+header,footer{background:#fff;border-bottom:1px solid var(--line);padding:16px 0}
+footer{border-top:1px solid var(--line);border-bottom:0;margin-top:44px}
+.wrap{width:min(100% - 36px,920px);margin:auto}a{color:var(--blue)}header a,footer a{font-weight:700;text-decoration:none;color:var(--navy)}
+.hero{background:var(--navy);color:#fff;padding:48px 0}.eyebrow{color:#c9ddf2;text-transform:uppercase;letter-spacing:.07em;font-size:.85rem;font-weight:700}
+h1{font-size:clamp(2rem,5vw,2.8rem);line-height:1.15;margin:10px 0}h2{color:var(--navy);font-size:1.5rem;margin:34px 0 10px}h3{color:var(--navy);margin:20px 0 6px}
+.hero p{max-width:780px;color:#edf4fb}.card{background:white;border:1px solid var(--line);border-radius:12px;padding:22px;margin:14px 0}
+.note{background:#edf3fa;border-left:4px solid var(--blue);padding:14px 18px;border-radius:0 8px 8px 0}
+table{width:100%;border-collapse:collapse;background:#fff;margin:14px 0}th,td{padding:11px;text-align:left;border:1px solid var(--line);vertical-align:top}th{background:#edf3fa;color:var(--navy)}
+.small{color:var(--muted);font-size:.92rem}.toc a{display:block;margin:4px 0;text-decoration:none}
+@media(max-width:650px){.card{padding:16px}table{font-size:.9rem}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><a href="treehouse-manufacturing-bi.html">← Return to TreeHouse project overview</a></div></header>
+<section class="hero"><div class="wrap"><div class="eyebrow">BIT550 · Assignment 4 · Business Case Analysis</div>
+<h1>Manufacturing Operations Intelligence Initiative</h1>
+<p>A proposed phased business intelligence pilot for TreeHouse Foods’ Northlake, Texas facility.</p>
+<p class="small">Caleb Turner · Full Sail University · Business Intelligence Technology · November 22, 2026</p></div></section>
+<main class="wrap">
+<div class="card"><h2 style="margin-top:0">Report overview</h2>
+<p>This report proposes bringing selected production, quality, maintenance, and inventory information into a governed analytical environment and presenting consistent operational measures through Power BI. The objective is to help plant leaders and operational teams identify production losses, understand recurring downtime and quality patterns, and make decisions using comparable information.</p>
+<p>Public company materials identify Northlake, Texas as a production location associated with TreeHouse Foods’ coffee business. Public sources do not disclose the facility’s internal software, reporting workflows, or current operating results. Internal systems and performance figures are therefore treated as items requiring validation.</p>
+<p class="note"><strong>Academic proposal disclaimer:</strong> This is a planning exercise, not a system deployed at TreeHouse Foods or a statement of verified operational results. All financial estimates and proposed targets are illustrative assumptions requiring validation by site leadership and Finance.</p>
+<nav class="toc"><strong>Contents</strong>
+<a href="#organization">1. Organizational Profile and Business Pain Point</a><a href="#roi">2. BI Business Justification and ROI Analysis</a><a href="#architecture">3. BI Technical Architecture</a><a href="#risk">4. Risk Assessment</a><a href="#roadmap">5. Project Plan and Implementation Roadmap</a><a href="#conclusion">Conclusion</a><a href="#ai">AI Transparency Statement</a><a href="#references">References</a></nav></div>
+<section id="organization"><h2>1. Organizational Profile and Business Pain Point</h2><div class="card">
+<p>TreeHouse Foods is a North American manufacturer of private-brand food and beverage products serving retail grocery, warehouse and club, e-commerce, foodservice, industrial, ingredient, export, and contract-manufacturing channels. This business case narrows the proposed scope to a pilot at Northlake rather than assuming an immediate enterprise-wide deployment.</p>
+<p>The proposed business pain point is limited operational visibility across production, downtime, quality, and maintenance information. In manufacturing environments, these data domains may be recorded in different systems, shift records, spreadsheets, or local reports. When definitions and reporting periods differ, supervisors and managers may spend time reconciling information before identifying causes of lost production.</p>
+<p>The pilot would test whether consolidating approved production, quality, and maintenance data improves reporting timeliness and makes recurring losses easier to identify. Baseline measures should include report-preparation time, time from shift end to report availability, completeness of downtime reason codes, and the percentage of records requiring manual correction.</p>
+<h3>Firsthand operational perspective</h3>
+<p>My work at TreeHouse Foods’ Northlake facility, including my role as a machine operator and support for autonomous maintenance and continuous-improvement activities, has given me a practical view of the connection between equipment performance, production output, and the work teams do to address recurring issues. Information is most useful when employees and leaders can understand what happened, when it happened, and what action is needed. A report connecting production results with downtime and maintenance information could help teams investigate causes and track whether corrective actions worked.</p>
+<p class="small">This perspective is based on my manufacturing work context, not a claim that a specific reporting failure or software limitation has been formally documented. Current reporting processes and source applications must be confirmed with authorized site and IT personnel.</p>
+</div></section>
+<section id="roi"><h2>2. BI Business Justification and ROI Analysis</h2><div class="card">
+<p>The investment is justified if it reduces the time required to produce trusted operational reports, helps identify avoidable production losses, and supports faster corrective action. A measured baseline is required before benefits can be claimed.</p>
+<h3>Illustrative annual benefit assumptions</h3>
+<ul><li><strong>Reporting efficiency:</strong> 20 hours per week of reporting and reconciliation effort avoided, valued at $35 per hour across 50 working weeks, or $35,000 annually. This is released labor capacity, not necessarily payroll reduction.</li>
+<li><strong>Quality and rework:</strong> $45,000 in annual avoided scrap, rework, and investigation costs after adoption. Finance must validate the assumption using approved cost data.</li>
+<li><strong>Throughput and downtime:</strong> $65,000 in annual contribution value from recovered productive capacity. This depends on operational changes, available demand, and Finance validation.</li></ul>
+<p>Total modeled annual benefit: <strong>$145,000</strong>.</p>
+<h3>Three-year model</h3>
+<table><thead><tr><th>Cost / benefit item</th><th>Year 1</th><th>Three-year total</th></tr></thead><tbody>
+<tr><td>One-time implementation, data engineering, modeling, testing, and training</td><td>$95,000</td><td>$95,000</td></tr>
+<tr><td>Annual platform, support, and operating costs</td><td>Planning assumption</td><td>Included in modeled total costs</td></tr>
+<tr><td>Total modeled benefits</td><td>Ramp-up dependent</td><td>$435,000</td></tr>
+<tr><td>Total modeled costs</td><td>—</td><td>$203,000</td></tr>
+<tr><td>Estimated net benefit</td><td>—</td><td>$232,000</td></tr>
+</tbody></table>
+<p>The illustrative three-year ROI is approximately <strong>114%</strong>, calculated as net benefit divided by total modeled costs. These are planning assumptions—not TreeHouse Foods financial data, approved funding, or verified savings. Reporting capacity, quality savings, and recovered throughput must be measured separately to avoid double counting.</p>
+</div></section>
+<section id="architecture"><h2>3. BI Technical Architecture</h2><div class="card">
+<p>The proposed architecture uses approved source extracts or interfaces, Microsoft Fabric Data Factory and/or Dataflow Gen2 for ingestion and transformation, OneLake and a curated Fabric Warehouse for governed storage, and Power BI for reporting.</p>
+<table><thead><tr><th>Layer</th><th>Proposed role</th></tr></thead><tbody>
+<tr><td>Operational sources</td><td>Approved production, quality, maintenance, inventory, and related operational data.</td></tr>
+<tr><td>Data integration</td><td>Fabric Data Factory and/or Dataflow Gen2 to ingest, standardize, validate, and transform data.</td></tr>
+<tr><td>Storage and modeling</td><td>OneLake and a curated Fabric Warehouse with governed definitions and documented data lineage.</td></tr>
+<tr><td>Analytics and reporting</td><td>Power BI semantic model and role-appropriate reports for operational users and leaders.</td></tr>
+</tbody></table>
+<p>Initial reporting should focus on production output, downtime, quality losses, changeover duration, and schedule attainment. KPI definitions, refresh expectations, data ownership, access controls, and reconciliation rules should be agreed upon before dashboards are accepted.</p>
+<p class="small">This is a conceptual proposal, not a confirmed map of TreeHouse Foods’ internal systems or interfaces. Specific source connectivity and implementation details require IT and business approval.</p>
+</div></section>
+<section id="risk"><h2>4. Risk Assessment</h2><div class="card">
+<ul>
+<li><strong>Data access and security:</strong> Source access may be restricted or require approvals. Mitigation: use approved interfaces, least-privilege access, documented ownership, and IT/security review.</li>
+<li><strong>Data quality and inconsistent definitions:</strong> Teams may define downtime, output, or defects differently. Mitigation: assign metric owners, document definitions, profile data, and reconcile pilot results with approved reports.</li>
+<li><strong>Limited internal capacity:</strong> Production subject-matter experts, IT, or analysts may not be available. Mitigation: keep the first release small, assign part-time owners, and schedule testing around shift operations.</li>
+<li><strong>Financial risk:</strong> Costs may exceed assumptions or benefits may not materialize. Mitigation: validate estimates, separate one-time and recurring costs, track actual costs, and require a pilot gate before scaling.</li>
+<li><strong>Scope expansion:</strong> Requests for more plants, real-time monitoring, predictive maintenance, or enterprise reporting could increase complexity. Mitigation: define pilot boundaries and require sponsor approval for scope changes.</li>
+</ul></div></section>
+<section id="roadmap"><h2>5. Project Plan and Implementation Roadmap</h2><div class="card">
+<p>The proposed implementation is divided into three phases over approximately six months. Timelines are planning estimates and should be adjusted after source-system discovery, IT review, and resource confirmation.</p>
+<table><thead><tr><th>Phase</th><th>Key work</th><th>Milestones and decision gate</th></tr></thead><tbody>
+<tr><td><strong>1. Foundation</strong><br>Months 1–2</td><td>Confirm problem, baseline, source owners, access, KPI definitions, security, and design.</td><td>Approved charter, data inventory, KPI dictionary, baseline report, and architecture approval. Proceed only when source access and ownership are approved and data quality is sufficient.</td></tr>
+<tr><td><strong>2. Pilot</strong><br>Months 3–4</td><td>Build ingestion, curated model, dashboards, and user training with production, quality, and maintenance users.</td><td>Working pipelines, tested semantic model, pilot dashboards, and user acceptance results. Proceed only when refresh is reliable and KPI totals reconcile to approved source reports.</td></tr>
+<tr><td><strong>3. Scale decision</strong><br>Months 5–6</td><td>Stabilize, document support, evaluate ROI, and prioritize next use cases.</td><td>Operational handover, support runbook, benefits review, and scale recommendation. Expand only if Finance validates benefits and controls and adoption are demonstrated.</td></tr>
+</tbody></table>
+<p>Proposed pilot targets to negotiate with site leadership include a 25% reduction in recurring report-preparation time, at least 95% completeness for required fields, and reconciliation of critical KPI totals to approved source reports. These are proposed targets, not current performance claims.</p>
+</div></section>
+<section id="conclusion"><h2>Conclusion</h2><div class="card">
+<p>A focused manufacturing BI pilot could support process-driven manufacturing and continuous improvement by making selected operational information more consistent and actionable. The proposed solution combines approved source data, controlled ETL, a governed analytical store, and Power BI reporting.</p>
+<p>The recommended decision is to authorize a limited discovery and baseline phase, not an enterprise-wide deployment. Further investment should depend on evidence produced at each project gate.</p>
+</div></section>
+<section id="ai"><h2>AI Transparency Statement</h2><div class="card">
+<p><strong>Tools used:</strong> ChatGPT was used as an AI support tool for organizing assignment requirements, developing an initial business-case structure, drafting explanatory text, proposing an illustrative ROI model, and creating a conceptual architecture diagram.</p>
+<p><strong>How outputs were used:</strong> AI-produced outline and section content were used as a starting point and edited to reflect verified company information and the student’s analysis. The ROI calculation is labeled as an assumption-based planning model, and the architecture is labeled as proposed rather than a depiction of confirmed internal systems.</p>
+<p><strong>Disagreement or revision:</strong> An early AI-generated draft used operational savings and technology-system details in a way that could be mistaken for verified company information. The report was revised to label financial figures as illustrative assumptions, describe source systems as candidate data domains rather than named internal applications, and avoid inventing a specific meeting, conversation, or software limitation.</p>
+<p><strong>Student judgment:</strong> The recommendation is to begin with a limited pilot centered on production output, downtime, and quality rather than a large enterprise-wide dashboard project. These measures connect directly to production work and can be evaluated together. A pilot allows the site to confirm available data, agree on KPI definitions, and test whether reports improve decisions before a larger investment.</p>
+</div></section>
+<section id="references"><h2>References</h2><div class="card">
+<p>Microsoft. (n.d.-a). <em>Fabric data warehouse documentation.</em> Microsoft Learn. <a href="https://learn.microsoft.com/en-us/fabric/data-warehouse/">https://learn.microsoft.com/en-us/fabric/data-warehouse/</a></p>
+<p>Microsoft. (n.d.-b). <em>Microsoft Fabric documentation.</em> Microsoft Learn. <a href="https://learn.microsoft.com/en-us/fabric/">https://learn.microsoft.com/en-us/fabric/</a></p>
+<p>Microsoft. (n.d.-c). <em>Dataflow Gen2 overview.</em> Microsoft Learn. <a href="https://learn.microsoft.com/en-us/fabric/data-factory/dataflows-gen2-overview">Microsoft Learn — Dataflow Gen2</a></p>
+<p>TreeHouse Foods. (n.d.-a). <em>Company overview.</em> <a href="https://www.treehousefoods.com/about-us/company-overview-1/default.aspx">TreeHouse Foods</a></p>
+<p>TreeHouse Foods. (n.d.-b). <em>Coffee.</em> <a href="https://www.treehousefoods.com/our-foods-and-beverages/beverages/coffee/">TreeHouse Foods</a></p>
+</div></section>
+<div class="card"><a href="treehouse-manufacturing-bi.html">← Return to TreeHouse project overview</a></div>
+</main>
+<footer><div class="wrap">Caleb Turner · Business Intelligence &amp; Analytics Portfolio · <a href="index.html">Portfolio home</a></div></footer>
+</body></html>
