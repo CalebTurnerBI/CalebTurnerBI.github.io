@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Power BI executive dashboard case study for Meridian Regional Health Network, a fictional 14-clinic healthcare scenario, developed for BIT550 Assignment 2.3.">
+  <title>Meridian Regional Health Network | Power BI Dashboard | Caleb Turner</title>
+  <style>
+    :root { --navy:#142b4a; --accent:#2878c8; --background:#f4f6f9; --surface:#fff; --text:#263445; --muted:#5e6b7a; --border:#dce3eb; --radius:12px; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--background); color:var(--text); font:16px/1.7 Arial,Helvetica,sans-serif; }
+    a { color:var(--accent); }
+    .container { width:min(100% - 36px,900px); margin:0 auto; }
+    header { background:var(--surface); border-bottom:1px solid var(--border); padding:16px 0; }
+    header a { color:var(--navy); font-weight:700; text-decoration:none; }
+    .hero { background:var(--navy); color:white; padding:54px 0; }
+    .eyebrow { color:#c9ddf2; font-size:.9rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; }
+    h1 { font-size:clamp(2rem,5vw,3rem); line-height:1.15; margin:10px 0 14px; }
+    .hero p { max-width:760px; color:#edf4fb; margin:0; }
+    main section { padding:32px 0 8px; }
+    h2 { color:var(--navy); font-size:1.55rem; margin:0 0 12px; }
+    h3 { color:var(--navy); margin:0 0 8px; font-size:1.08rem; }
+    .card { background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:22px; }
+    .grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
+    .metric { font-size:1.7rem; font-weight:700; color:var(--navy); line-height:1.2; }
+    .muted { color:var(--muted); }
+    .tag { display:inline-block; padding:5px 10px; border-radius:6px; background:#edf3fa; color:var(--navy); font-size:.86rem; font-weight:700; margin:4px 5px 4px 0; }
+    ul { padding-left:22px; }
+    .note { border-left:4px solid var(--accent); background:#edf3fa; padding:14px 17px; border-radius:0 8px 8px 0; }
+    footer { margin-top:42px; padding:22px 0; border-top:1px solid var(--border); color:var(--muted); background:#fff; }
+    @media(max-width:650px) { .grid { grid-template-columns:1fr; } .hero { padding:42px 0; } }
+  </style>
+</head>
+<body>
+  <header><div class="container"><a href="index.html">← Back to Caleb Turner's BI Portfolio</a></div></header>
+  <section class="hero">
+    <div class="container">
+      <div class="eyebrow">BIT550 · Assignment 2.3 · Power BI Desktop</div>
+      <h1>Meridian Regional Health Network Executive Dashboard</h1>
+      <p>An executive reporting dashboard built around a fictional 14-clinic healthcare network, using 2025 operational data to bring encounter activity, reimbursement, access, and patient experience into a consolidated view.</p>
+    </div>
+  </section>
+  <main class="container">
+    <section>
+      <h2>Project Overview</h2>
+      <div class="card">
+        <p>The assignment called for an executive dashboard that could give Meridian's leadership a concise view of network performance. The report combines encounter volume, reimbursement revenue, no-show activity, patient satisfaction, clinic performance, payer mix, and state-level results.</p>
+        <p>The completed analysis describes approximately 60,000 encounters, $16.88 million in reimbursement revenue, an 8.2% no-show rate, and an average patient satisfaction score of 3.8 across the year. These are results from the supplied academic scenario dataset, not real patient or healthcare-provider performance.</p>
+      </div>
+    </section>
+    <section>
+      <h2>Executive KPI Results</h2>
+      <div class="grid">
+        <div class="card"><div class="metric">~60,000</div><div class="muted">Annual encounters</div></div>
+        <div class="card"><div class="metric">$16.88M</div><div class="muted">Reimbursement revenue</div></div>
+        <div class="card"><div class="metric">8.2%</div><div class="muted">No-show rate</div></div>
+        <div class="card"><div class="metric">3.8</div><div class="muted">Average patient satisfaction score</div></div>
+      </div>
+    </section>
+    <section>
+      <h2>Dashboard &amp; Analysis Views</h2>
+      <div class="card">
+        <ul>
+          <li>Executive KPI cards for encounter activity, completed encounters, no-show rate, reimbursement, satisfaction, and wait-time measures.</li>
+          <li>Clinic revenue compared with monthly targets.</li>
+          <li>Monthly reimbursement trend to identify changes across the year.</li>
+          <li>Payer-mix analysis and state-level revenue comparisons.</li>
+          <li>Clinic satisfaction reporting.</li>
+          <li>Interactive slicers for month, clinic, state, and service line.</li>
+        </ul>
+        <p class="muted">The written analysis notes that Virginia contributed the most revenue among the three states represented, followed by North Carolina and Maryland. Commercial and Medicare were the largest payer categories in the supplied data.</p>
+      </div>
+    </section>
+    <section>
+      <h2>Data Model &amp; DAX</h2>
+      <div class="card">
+        <p>The model uses the Clinic Directory as a shared dimension connected to encounter, monthly target, and patient-satisfaction tables. A separate Date table supports time-based analysis. A TargetMonthDate field was created to connect monthly targets to the Date table so that month selections filter actual revenue and corresponding targets consistently.</p>
+        <p>Measures covered encounter counts, completed encounters, no-show rate, reimbursement revenue, revenue targets and variance, average satisfaction, and average wait time. The analysis also describes dollar and percentage revenue variance measures.</p>
+      </div>
+    </section>
+    <section>
+      <h2>Data Quality Exercise</h2>
+      <div class="card">
+        <p>The EHR-C raw export was treated as a separate data-quality exercise. Preparation included standardizing column names and status labels, converting encounter dates using the United States locale, standardizing service-line capitalization, and assigning blank payer fields the value “Unknown.”</p>
+        <div class="grid">
+          <div><div class="metric">2,815</div><div class="muted">Original EHR-C rows</div></div>
+          <div><div class="metric">2,735</div><div class="muted">Rows after duplicate review</div></div>
+        </div>
+        <p>Review identified 80 repeated EncounterID values; one repeated row for each duplicate ID was removed. Missing wait-time values were retained rather than replaced with zero. The cleaned EHR-C query remained separate from the main encounter table to avoid unintentionally counting the same encounters twice.</p>
+      </div>
+    </section>
+    <section>
+      <h2>Business Findings</h2>
+      <div class="card">
+        <ul>
+          <li>The 8.2% no-show rate gives leadership a reason to investigate appointment access and compare patterns by clinic, month, and service line.</li>
+          <li>Monthly revenue fluctuated during the year; the analysis recommends investigating seasonality, capacity, payer processing, service-line mix, and data timing before drawing conclusions.</li>
+          <li>Revenue-versus-target comparisons can help prioritize follow-up with clinics showing sustained shortfalls.</li>
+          <li>The dashboard highlights where to investigate, but does not establish the causes of differences or justify operational changes on its own.</li>
+        </ul>
+      </div>
+    </section>
+    <section>
+      <h2>Tools &amp; Skills Demonstrated</h2>
+      <div class="card">
+        <span class="tag">Power BI Desktop</span>
+        <span class="tag">DAX Measures</span>
+        <span class="tag">Power Query</span>
+        <span class="tag">Data Cleaning</span>
+        <span class="tag">Data Modeling</span>
+        <span class="tag">Date Tables</span>
+        <span class="tag">KPI Reporting</span>
+        <span class="tag">Interactive Slicers</span>
+        <span class="tag">Data Validation</span>
+        <span class="tag">Healthcare Operations Analytics</span>
+      </div>
+    </section>
+    <section>
+      <h2>Project Deliverables</h2>
+      <div class="card">
+        <p>The project included a Power BI Desktop report, a written analysis, and a data-quality exercise. The written analysis documents findings, modeling decisions, measure validation, and data-cleaning choices.</p>
+        <p class="note"><strong>Portfolio note:</strong> The case study summarizes the work based on the assignment analysis currently available. The original PBIX file and dashboard screenshots have not yet been published here, so no download or live dashboard link is shown at this time.</p>
+      </div>
+    </section>
+  </main>
+  <footer><div class="container">Caleb Turner · Business Intelligence &amp; Analytics Portfolio · <a href="index.html">Return to portfolio</a></div></footer>
+</body>
+</html>
